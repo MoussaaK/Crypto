@@ -1,4 +1,4 @@
-Plusieurs messages ont été encodé sur le format du masque jetable, mais en utilisant la même clé.
+Plusieurs messages ont été encodés sur le principe du masque jetable, mais en utilisant la même clé plusieurs fois.
 
 Merci de décrypter les messages suivants:
 
