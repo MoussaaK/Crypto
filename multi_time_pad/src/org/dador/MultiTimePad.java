@@ -1,6 +1,5 @@
 
 package org.dador;
-import org.dador.HexConverters ;
 
 /**
  *
@@ -9,7 +8,7 @@ public class MultiTimePad {
 
 
     /**
-     *
+     * Main function. Loads cryptogram and displays decryption
      * @param args
      */
     public static void main(final String[] args) {
@@ -31,7 +30,7 @@ public class MultiTimePad {
         System.out.println("Original Cryptograms :");
         for (i = 0; i < nbMsg; i++) {
             System.out.println(messages[i]);
-            tmpByteMsg = HexConverters.getByteArrayFromStringHexRepresentation(messages[i]);
+            tmpByteMsg = HexConverters.toByteArrayFromHex(messages[i]);
             byteArrayMsg[i] = tmpByteMsg ;
         }
 
@@ -41,13 +40,13 @@ public class MultiTimePad {
         // Fill in the key ...
 
         System.out.println("Key :");
-        System.out.println(HexConverters.getStringHexRepresentationFromByteArray(key));
+        System.out.println(HexConverters.toHexFromByteArray(key));
 
         System.out.println();
         System.out.println("Decoded messages :");
         for (i = 0; i < nbMsg; i++) {
             tmpByteMsg = HexConverters.xorArray(key, byteArrayMsg[i]);
-            System.out.println(HexConverters.getPrintableByteArray(tmpByteMsg));
+            System.out.println(HexConverters.toPrintableString(tmpByteMsg));
         }
     }
 }
