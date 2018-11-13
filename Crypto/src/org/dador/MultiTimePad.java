@@ -38,6 +38,20 @@ public class MultiTimePad {
 
         key = new byte[msg1.length() / 2];
         // Fill in the key ...
+        key[0] = (byte) 0xBB^0x49;
+        key[1] = 0x1A;
+        key[2] = 0x04;
+        key[3] = (byte) 0x9B;
+        key[4] = (byte) 0xD0;
+        key[5] = (byte) 0x6E^0x1D;
+        key[7] =  (byte) 0xC8;
+        key[9] = (byte) 0x7C;
+        key[11] = (byte) 0x09;
+        key[12] = (byte) 0xE;
+        key[14] = (byte) 0x86;
+        key[15] = (byte) 0xD0;
+        key[16] = (byte) 0xE9;
+        key[18] = (byte) 0x39;
 
         System.out.println("Key :");
         System.out.println(HexConverters.toHexFromByteArray(key));
@@ -52,12 +66,13 @@ public class MultiTimePad {
         
         /*XoR between Crypto*/
         for (int i1 = 0; i1 < byteArrayMsg.length; i1++) {
-
-        	byte[] byteMsg0XorMsg1 = HexConverters.xorArray(byteArrayMsg[0], byteArrayMsg[i1]);
-        	String msg0XorMsg1 = HexConverters.toHexFromByteArray(byteMsg0XorMsg1);
+        	byte[] bytesMsg0XorMsg1 = HexConverters.xorArray(byteArrayMsg[0], byteArrayMsg[i1]);
+        	String msg0XorMsg1 = HexConverters.toHexFromByteArray(bytesMsg0XorMsg1);
         	System.out.println(msg0XorMsg1);
-
+        	//msg0XorMsg1.replace(target, replacement)
         }
+        
+        
 		/*for (int j = 0; j < byteArrayMsg.length; j++) {
 			for (int i1 = 0; i1 < byteArrayMsg.length; i1++) {
 				if(i1 != j) {
