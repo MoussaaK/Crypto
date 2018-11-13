@@ -48,5 +48,25 @@ public class MultiTimePad {
             tmpByteMsg = HexConverters.xorArray(key, byteArrayMsg[i]);
             System.out.println(HexConverters.toPrintableString(tmpByteMsg));
         }
+        
+        
+        /*XoR between Crypto*/
+        for (int i1 = 0; i1 < byteArrayMsg.length; i1++) {
+
+        	byte[] byteMsg0XorMsg1 = HexConverters.xorArray(byteArrayMsg[0], byteArrayMsg[i1]);
+        	String msg0XorMsg1 = HexConverters.toHexFromByteArray(byteMsg0XorMsg1);
+        	System.out.println(msg0XorMsg1);
+
+        }
+		/*for (int j = 0; j < byteArrayMsg.length; j++) {
+			for (int i1 = 0; i1 < byteArrayMsg.length; i1++) {
+				if(i1 != j) {
+					byte[] byteMsg0XorMsg1 = HexConverters.xorArray(byteArrayMsg[j], byteArrayMsg[i1]);
+					String msg0XorMsg1 = HexConverters.toHexFromByteArray(byteMsg0XorMsg1);
+					System.out.println(msg0XorMsg1);
+				}
+			}
+			System.out.println("-------------------------------------------------------");
+		}*/
     }
 }
