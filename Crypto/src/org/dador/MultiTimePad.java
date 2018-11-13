@@ -38,20 +38,38 @@ public class MultiTimePad {
 
         key = new byte[msg1.length() / 2];
         // Fill in the key ...
-        key[0] = (byte) 0xBB^0x49;
-        key[1] = 0x1A;
-        key[2] = 0x04;
+        key[0] = (byte) 0xF2;
+        key[1] = (byte) 0x1A;
+        key[2] = (byte) 0x04;
         key[3] = (byte) 0x9B;
         key[4] = (byte) 0xD0;
-        key[5] = (byte) 0x6E^0x1D;
-        key[7] =  (byte) 0xC8;
-        key[9] = (byte) 0x7C;
+        key[5] = (byte) 0x73;
+        key[6] = (byte) 0x23;
+        key[7] = (byte) 0xC8;
+        key[8] = (byte) 0x39;
+        key[9] = (byte) 0x98;
+        
+        key[10] = (byte) 0xCE;
         key[11] = (byte) 0x09;
-        key[12] = (byte) 0xE;
+        key[12] = (byte) 0x0E;
+        key[13] = (byte) 0xBC;
         key[14] = (byte) 0x86;
-        key[15] = (byte) 0xD0;
-        key[16] = (byte) 0xE9;
+        key[15] = (byte) 0xDA;
+        key[16] = (byte) 0xC9;
+        key[17] = (byte) 0xE0;
         key[18] = (byte) 0x39;
+        key[19] = (byte) 0x89;
+        key[20] = (byte) 0x2A;
+        key[21] = (byte) 0x5F;
+        key[22] = (byte) 0x72;
+        key[23] = (byte) 0x67;
+        
+        key[24] = (byte) (0x6F^0xEC) ;
+        key[25] = (byte) (0x77^0xD2) ;
+        key[26] = (byte) (0x20^0x41) ;
+        key[27] = (byte) (0x69^0x94) ;
+        key[28] = (byte) (0x6F^0x4A) ;
+        key[29] = (byte) (0x6E^0x80) ;
 
         System.out.println("Key :");
         System.out.println(HexConverters.toHexFromByteArray(key));
